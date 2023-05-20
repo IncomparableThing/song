@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<audio loop="loop" class="audio" >
+			<source src="淋雨一直走-张韶涵.mp3" type="audio/mp3"/>
+		</audio>
+		<audio loop="loop" class="audio" >
+			<source src="倒数-G.E.M.邓紫棋.mp3" type="audio/mp3"/>
+		</audio>
+		<div class="top">
+			你想听第<input type="number" id="num"/>首歌
+		</div>
+		<div class="footer">
+			<img src="img/上一首.png" id="last"/>
+			<img src="img/播放器.png" id="player" />
+			<img src="img/下一首.png" id="next"/>
+		</div>
+		
+		<script>
+			$(function () {
+			        let start = $("#player");
+					// newsong();
+					start.click(getVal);
+			    })
+			
+			// 点击图标获取到数字
+			function getVal(){
+				let n = $("#num").val()-1;
+				console.log(n);
+				song(n);
+			}
+			
+			// function newsong(){
+			// 	let last = $("#last");
+			// 	let next = $("#next");
+			// 	let num = 1;
+				
+			// 	last.click(function(){
+			// 		num -=1;
+			// 		console.log(num);
+			// 	})
+				
+			// 	next.click(function(){
+			// 		num +=1;
+			// 		console.log(num);
+			// 	})
+				
+			// 	song(num);
+			// }
+			
+			function song(i){
+				let music = $(".audio")[i]; // jQuery对象转dom对象
+				console.log(music);
+				let musicImg = $("#player");
+				// setTimeout(() => {music.play();}, 1000);  // 1s后自动播放
+				musicImg.click(function () {  // 点击图标:播放 or 暂停
+				   if (music.paused) {
+				       music.play();
+				   } else
+				       music.pause();
+				});
+			}
+		</script>
+	</body>
+</html>

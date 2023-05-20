@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+	<link href="css/style.css" type="text/css" rel="stylesheet"/>
+	<script src="js/index.js"></script>
+    <title></title>
+</head>
+<body>
+	<div class="my_music">
+		<div class="big_div">
+			<div class="warn">双击播放键才可以播放</div>
+			<div class="header">
+				<span>歌单</span>
+			</div>
+			<div class="body">
+				<div class="song" >
+					你想听第<input type="text" id="num"/>首歌
+					<p>1.淋雨一直走</p>
+					<audio loop="loop" class="audio" >
+						<source src="./song/淋雨一直走-张韶涵.mp3" type="audio/mp3"/>
+					</audio>
+					<p>2.倒数</p>
+					<audio loop="loop" class="audio" >
+						<source src="./song/倒数-G.E.M.邓紫棋.mp3" type="audio/mp3"/>
+					</audio>
+				</div>
+			</div>
+			<div class="footer">
+				<img src="img/播放器.png"  id="player"/>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
